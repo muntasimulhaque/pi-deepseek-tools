@@ -35,7 +35,9 @@
 		]
 	},
 	"scripts": {
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"check-secrets": "node scripts/check-secrets.mjs",
+		"prepublishOnly": "npm run check-secrets && npm run typecheck"
 	},
 	"engines": {
 		"node": ">=22.19.0"

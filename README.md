@@ -34,6 +34,8 @@ If you already log in to DeepSeek in Pi, there is nothing to configure. To point
 export DEEPSEEK_BASE_URL=https://api.deepseek.com
 ```
 
+**No credentials are bundled.** The published tarball contains only `index.ts`, `deepseek.ts`, `README.md`, `LICENSE` and `package.json`. Every install resolves its own key at runtime from `DEEPSEEK_API_KEY` or its own `<agent dir>/auth.json`, and sends it only to the configured DeepSeek base URL. `npm publish` runs `scripts/check-secrets.mjs`, which refuses to publish when a credential-looking string appears in any tracked file.
+
 ## Use
 
 ```text
